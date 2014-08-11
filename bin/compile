@@ -74,8 +74,8 @@ cat << EOF > "$BUILD_DIR/config/unicorn.rb"
 require 'fileutils'
 
 listen '/tmp/nginx.socket'
-worker_processes Integer(ENV["WEB_CONCURRENCY"] || 4)
-timeout 20
+worker_processes Integer(ENV["WEB_CONCURRENCY"] || 6)
+timeout 25
 preload_app true
 
 before_fork do |server, worker|
